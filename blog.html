@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Dyt. Ela Ayfer Kaya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#4CAF50',secondary:'#E8F5E9'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        .blog-hero {
+            background: linear-gradient(135deg, #E8F5E9 0%, #ffffff 100%);
+        }
+        .category-tag {
+            background: #4CAF50;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-['Pacifico'] text-primary">Dyt. Ela Ayfer Kaya</a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Anasayfa</a>
+                <a href="index.html#about" class="text-gray-800 hover:text-primary font-medium transition-colors">Hakkımda</a>
+                <a href="index.html#services" class="text-gray-800 hover:text-primary font-medium transition-colors">Hizmetler</a>
+                <a href="blog.html" class="text-primary font-medium">Blog</a>
+                <a href="index.html#contact" class="text-gray-800 hover:text-primary font-medium transition-colors">İletişim</a>
+            </nav>
+            
+            <!-- Back to Home Button -->
+            <div class="hidden md:flex items-center">
+                <a href="index.html" class="border-2 border-primary text-primary px-4 py-2 rounded-button font-medium hover:bg-primary hover:text-white transition-colors flex items-center">
+                    <i class="ri-arrow-left-line mr-2"></i> Ana Sayfa
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+                <i class="ri-menu-line ri-2x"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-md" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Anasayfa</a>
+                <a href="index.html#about" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Hakkımda</a>
+                <a href="index.html#services" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Hizmetler</a>
+                <a href="blog.html" class="text-primary font-medium py-2">Blog</a>
+                <a href="index.html#contact" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">İletişim</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="blog-hero pt-24 pb-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Blog Yazılarım</h1>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Beslenme, sağlık ve yaşam tarzı hakkında bilgilendirici yazılar ve ipuçları. 
+                    Sağlıklı yaşam yolculuğunuzda size rehberlik edecek içerikler.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <!-- Featured Post -->
+            <div class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8">Öne Çıkan Yazı</h2>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-1/2">
+                            <img src="günesaglıklıbaşlamak.jpg" 
+                                 alt="Güne Sağlıklı Başlamanın 5 Yolu" 
+                                 class="w-full h-64 md:h-full object-cover">
+                        </div>
+                        <div class="md:w-1/2 p-8">
+                            <span class="category-tag">Beslenme İpuçları</span>
+                            <h3 class="text-2xl font-bold text-gray-800 mt-4 mb-4">Güne Sağlıklı Başlamanın 5 Yolu</h3>
+                            <div class="flex items-center text-gray-500 text-sm mb-4">
+                                <i class="ri-calendar-line mr-2"></i>
+                                <span>18 Haziran 2025</span>
+                                <span class="mx-2">•</span>
+                                <i class="ri-time-line mr-2"></i>
+                                <span>5 dk okuma</span>
+                            </div>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Güne enerjik ve sağlıklı başlamak için kahvaltıda tüketebileceğiniz besinler ve pratik tarifler. 
+                                Sabah rutininizi değiştirerek gün boyu enerjinizi yüksek tutabilirsiniz.
+                            </p>
+                            <a href="blog-post.html" class="text-primary font-semibold flex items-center hover:underline">
+                                Devamını Oku <i class="ri-arrow-right-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Posts Grid -->
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8">Tüm Yazılar</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="blog-card bg-white rounded-lg shadow-md transition-all duration-300 cursor-pointer" data-blog-id="1">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=Person%20drinking%20water%20from%20glass%20bottle%20after%20exercise%2C%20hydration%20concept%2C%20bright%20and%20clean%20image%2C%20healthy%20lifestyle%20photography&width=400&height=250&seq=blog2&orientation=landscape" 
+                             alt="Su İçmenin Sağlığımıza Etkileri" 
+                             class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="absolute top-4 left-4">
+                            <span class="category-tag">Sağlık</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 text-sm mb-2">
+                            <i class="ri-calendar-line mr-2"></i>
+                            <span>10 Haziran 2025</span>
+                            <span class="mx-2">•</span>
+                            <span>4 dk okuma</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">Su İçmenin Sağlığımıza Etkileri</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">Yeterli su tüketiminin metabolizma, cilt sağlığı ve genel sağlık üzerindeki olumlu etkileri. Günde ne kadar su içmeliyiz?</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Devamını Oku <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="blog-card bg-white rounded-lg shadow-md transition-all duration-300 cursor-pointer" data-blog-id="2">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=Various%20colorful%20vegetables%20and%20fruits%20arranged%20on%20white%20surface%2C%20rainbow%20of%20healthy%20foods%2C%20nutrition%20concept%2C%20bright%20and%20vibrant%20colors%2C%20professional%20food%20photography&width=400&height=250&seq=blog3&orientation=landscape" 
+                             alt="Mevsiminde Beslenmenin Önemi" 
+                             class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="absolute top-4 left-4">
+                            <span class="category-tag">Doğal Beslenme</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 text-sm mb-2">
+                            <i class="ri-calendar-line mr-2"></i>
+                            <span>5 Haziran 2025</span>
+                            <span class="mx-2">•</span>
+                            <span>6 dk okuma</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">Mevsiminde Beslenmenin Önemi</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">Mevsiminde tüketilen sebze ve meyvelerin besin değerleri ve sağlığımıza katkıları. Doğal döngüye uygun beslenme.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Devamını Oku <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="blog-card bg-white rounded-lg shadow-md transition-all duration-300 cursor-pointer" data-blog-id="3">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=Person%20doing%20yoga%20or%20stretching%20exercise%20in%20bright%20room%2C%20wellness%20and%20mindfulness%20concept%2C%20healthy%20lifestyle%20photography&width=400&height=250&seq=blog4&orientation=landscape" 
+                             alt="Stres ve Beslenme İlişkisi" 
+                             class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="absolute top-4 left-4">
+                            <span class="category-tag">Zihinsel Sağlık</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 text-sm mb-2">
+                            <i class="ri-calendar-line mr-2"></i>
+                            <span>1 Haziran 2025</span>
+                            <span class="mx-2">•</span>
+                            <span>7 dk okuma</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">Stres ve Beslenme İlişkisi</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">Stresin beslenme alışkanlıklarımız üzerindeki etkileri ve stresle başa çıkmada yardımcı besinler.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Devamını Oku <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 4 -->
+                <div class="blog-card bg-white rounded-lg shadow-md transition-all duration-300 cursor-pointer" data-blog-id="4">
+                    <div class="relative">
+                        <img src="kilovermesüreci.jpg" 
+                             alt="Kilo Verme Sürecinde Yapılan Hatalar" 
+                             class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="absolute top-4 left-4">
+                            <span class="category-tag">Kilo Yönetimi</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 text-sm mb-2">
+                            <i class="ri-calendar-line mr-2"></i>
+                            <span>25 Mayıs 2025</span>
+                            <span class="mx-2">•</span>
+                            <span>8 dk okuma</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">Kilo Verme Sürecinde Yapılan Hatalar</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">Kilo verme sürecinde sıkça yapılan hatalar ve bunlardan nasıl kaçınabiliriz. Sağlıklı kilo verme ipuçları.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Devamını Oku <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 5 -->
+                <div class="blog-card bg-white rounded-lg shadow-md transition-all duration-300 cursor-pointer" data-blog-id="5">
+                    <div class="relative">
+                        <img src="cocuksagllıklıbeslenme.jpg" 
+                             alt="Çocuklarda Sağlıklı Beslenme" 
+                             class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="absolute top-4 left-4">
+                            <span class="category-tag">Çocuk Beslenmesi</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 text-sm mb-2">
+                            <i class="ri-calendar-line mr-2"></i>
+                            <span>20 Mayıs 2025</span>
+                            <span class="mx-2">•</span>
+                            <span>6 dk okuma</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">Çocuklarda Sağlıklı Beslenme Alışkanlıkları</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">Çocuklara sağlıklı beslenme alışkanlıkları kazandırmanın yolları. Yaş gruplarına göre beslenme önerileri.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Devamını Oku <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 6 -->
+                <div class="blog-card bg-white rounded-lg shadow-md transition-all duration-300 cursor-pointer" data-blog-id="6">
+                    <div class="relative">
+                        <img src="hamile.jpg" 
+                             alt="Hamilelik Döneminde Beslenme" 
+                             class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="absolute top-4 left-4">
+                            <span class="category-tag">Hamilelik Beslenmesi</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 text-sm mb-2">
+                            <i class="ri-calendar-line mr-2"></i>
+                            <span>15 Mayıs 2025</span>
+                            <span class="mx-2">•</span>
+                            <span>9 dk okuma</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">Hamilelik Döneminde Beslenme Rehberi</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">Hamilelik sürecinde anne ve bebeğin sağlığı için önemli beslenme önerileri ve dikkat edilmesi gerekenler.</p>
+                        <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                            Devamını Oku <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12">
+                <div class="flex items-center space-x-2">
+                    <button class="px-3 py-2 text-gray-500 border border-gray-300 rounded hover:bg-gray-50" disabled>
+                        <i class="ri-arrow-left-line"></i>
+                    </button>
+                    <button class="px-4 py-2 bg-primary text-white rounded">1</button>
+                    <button class="px-4 py-2 text-gray-700 border border-gray-300 rounded hover:bg-gray-50">2</button>
+                    <button class="px-4 py-2 text-gray-700 border border-gray-300 rounded hover:bg-gray-50">3</button>
+                    <button class="px-3 py-2 text-gray-700 border border-gray-300 rounded hover:bg-gray-50">
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Modal -->
+    <div id="blog-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-200 p-4 flex justify-between items-center">
+                <h2 id="modal-title" class="text-2xl font-bold text-gray-800"></h2>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700 text-2xl">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            
+            <div class="p-6">
+                <div id="modal-content">
+                    <!-- Content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-lg shadow-md p-8 max-w-2xl mx-auto text-center">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Blog Güncellemelerini Kaçırmayın</h3>
+                <p class="text-gray-600 mb-6">
+                    Yeni blog yazılarımızdan haberdar olmak için e-posta listemize katılın.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input
+                        type="email"
+                        placeholder="E-posta adresiniz"
+                        class="flex-1 px-4 py-3 border border-gray-300 rounded focus:border-primary focus:outline-none"
+                    />
+                    <button class="bg-primary text-white px-6 py-3 rounded font-medium hover:bg-opacity-90 transition-colors">
+                        Abone Ol
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-['Pacifico'] mb-6">Dyt. Ela Ayfer Kaya</h3>
+                    <p class="text-gray-400 mb-6">Sağlıklı bir yaşam için doğru beslenme alışkanlıkları kazanmanıza yardımcı oluyorum.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-facebook-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-whatsapp-line"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Hızlı Erişim</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Anasayfa</a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition-colors">Hakkımda</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-colors">Hizmetler</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">İletişim</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">İletişim</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mr-3 mt-1"></i>
+                            <span>Bağdat Caddesi No:123, Kadıköy, İstanbul</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mr-3 mt-1"></i>
+                            <span>+90 (212) 123 45 67</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mr-3 mt-1"></i>
+                            <span>info@elaayfer.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2025 Dyt. Ela Ayfer Kaya. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 z-50">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+                } else {
+                    mobileMenuButton.innerHTML = '<i class="ri-close-line ri-2x"></i>';
+                }
+            });
+        });
+    </script>
+
+    <!-- Back to Top Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <!-- Blog Modal Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const blogCards = document.querySelectorAll('.blog-card');
+        const modal = document.getElementById('blog-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContent = document.getElementById('modal-content');
+        const closeModal = document.getElementById('close-modal');
+        
+        // Blog data
+        const blogData = {
+            1: {
+                title: "Su İçmenin Sağlığımıza Etkileri",
+                category: "Sağlık",
+                date: "10 Haziran 2025",
+                readTime: "4 dk okuma",
+                image: "https://readdy.ai/api/search-image?query=Person%20drinking%20water%20from%20glass%20bottle%20after%20exercise%2C%20hydration%20concept%2C%20bright%20and%20clean%20image%2C%20healthy%20lifestyle%20photography&width=600&height=300&seq=blog2&orientation=landscape",
+                excerpt: "Yeterli su tüketiminin metabolizma, cilt sağlığı ve genel sağlık üzerindeki olumlu etkileri. Günde ne kadar su içmeliyiz?",
+                content: `
+                    <p class="text-gray-600 mb-6 leading-relaxed">Su, vücudumuzun en temel ihtiyaçlarından biridir. Vücut ağırlığımızın yaklaşık %60'ını oluşturan su, hayati fonksiyonlarımızın devam etmesi için kritik öneme sahiptir.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Su İçmenin Faydaları</h3>
+                    <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                        <li>Metabolizmayı hızlandırır ve kilo kontrolüne yardımcı olur</li>
+                        <li>Cilt sağlığını iyileştirir ve yaşlanma belirtilerini geciktirir</li>
+                        <li>Böbrek fonksiyonlarını destekler ve toksinlerin atılımını sağlar</li>
+                        <li>Sindirim sistemini düzenler ve kabızlığı önler</li>
+                        <li>Beyin fonksiyonlarını iyileştirir ve konsantrasyonu artırır</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Günde Ne Kadar Su İçmeliyiz?</h3>
+                    <p class="text-gray-600 mb-6">Genel olarak yetişkin bir birey için günde 8-10 bardak (2-2.5 litre) su tüketimi önerilir. Ancak bu miktar kişinin yaşı, kilosu, aktivite düzeyi ve iklim koşullarına göre değişebilir.</p>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mb-6">
+                        <h4 class="font-semibold text-green-800 mb-2">💡 Su İçme İpuçları</h4>
+                        <ul class="text-green-700 space-y-1 text-sm">
+                            <li>• Güne 1-2 bardak su içerek başlayın</li>
+                            <li>• Yemeklerden 30 dakika önce su için</li>
+                            <li>• Yanınızda her zaman su bulundurun</li>
+                            <li>• Su içmeyi unutmamak için hatırlatıcı kurun</li>
+                        </ul>
+                    </div>
+                `,
+                fullArticleUrl: "#"
+            },
+            2: {
+                title: "Mevsiminde Beslenmenin Önemi",
+                category: "Doğal Beslenme",
+                date: "5 Haziran 2025",
+                readTime: "6 dk okuma",
+                image: "https://readdy.ai/api/search-image?query=Various%20colorful%20vegetables%20and%20fruits%20arranged%20on%20white%20surface%2C%20rainbow%20of%20Various%20colorful%20vegetables%20and%20fruits%20arranged%20on%20white%20surface%2C%20rainbow%20of%20healthy%20foods%2C%20nutrition%20concept%2C%20bright%20and%20vibrant%20colors%2C%20professional%20food%20photography&width=600&height=300&seq=blog3&orientation=landscape",
+                excerpt: "Mevsiminde tüketilen sebze ve meyvelerin besin değerleri ve sağlığımıza katkıları. Doğal döngüye uygun beslenme.",
+                content: `
+                    <p class="text-gray-600 mb-6 leading-relaxed">Doğanın sunduğu mevsimlik ürünleri tüketmek, hem sağlığımız hem de çevre için en doğru tercihlerden biridir. Mevsiminde yetişen sebze ve meyveler, en yüksek besin değerine sahiptir.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Mevsiminde Beslenmenin Avantajları</h3>
+                    <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                        <li>Daha yüksek vitamin ve mineral içeriği</li>
+                        <li>Daha taze ve lezzetli ürünler</li>
+                        <li>Ekonomik açıdan daha uygun fiyatlar</li>
+                        <li>Çevresel sürdürülebilirlik</li>
+                        <li>Vücudun mevsimsel ihtiyaçlarına uygunluk</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Mevsimlik Ürün Takvimi</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-800 mb-2">🍂 Sonbahar</h4>
+                            <p class="text-orange-700 text-sm">Kabak, havuç, elma, armut, nar, ceviz</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">❄️ Kış</h4>
+                            <p class="text-blue-700 text-sm">Portakal, mandalina, lahana, ıspanak, kereviz</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">🌸 İlkbahar</h4>
+                            <p class="text-green-700 text-sm">Çilek, kiraz, marul, roka, taze fasulye</p>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-yellow-800 mb-2">☀️ Yaz</h4>
+                            <p class="text-yellow-700 text-sm">Domates, salatalık, şeftali, kavun, karpuz</p>
+                        </div>
+                    </div>
+                `,
+                fullArticleUrl: "#"
+            },
+            3: {
+                title: "Stres ve Beslenme İlişkisi",
+                category: "Zihinsel Sağlık",
+                date: "1 Haziran 2025",
+                readTime: "7 dk okuma",
+                image: "https://readdy.ai/api/search-image?query=Person%20doing%20yoga%20or%20stretching%20exercise%20in%20bright%20room%2C%20wellness%20and%20mindfulness%20concept%2C%20healthy%20lifestyle%20photography&width=600&height=300&seq=blog4&orientation=landscape",
+                excerpt: "Stresin beslenme alışkanlıklarımız üzerindeki etkileri ve stresle başa çıkmada yardımcı besinler.",
+                content: `
+                    <p class="text-gray-600 mb-6 leading-relaxed">Stres, modern yaşamın kaçınılmaz bir parçası haline gelmiştir. Ancak stresin beslenme alışkanlıklarımız üzerindeki etkilerini anlamak ve doğru besinlerle stresle başa çıkmak mümkündür.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Stresin Beslenme Üzerindeki Etkileri</h3>
+                    <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                        <li>Aşırı yeme veya iştahsızlık</li>
+                        <li>Şekerli ve yağlı yiyeceklere yönelim</li>
+                        <li>Düzensiz öğün saatleri</li>
+                        <li>Vitamin ve mineral eksiklikleri</li>
+                        <li>Sindirim problemleri</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Stresle Başa Çıkmada Yardımcı Besinler</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">🐟 Omega-3 Zengini Besinler</h4>
+                            <p class="text-gray-600 text-sm">Somon, ceviz, keten tohumu - Beyin sağlığını destekler</p>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">🍃 Magnezyum Kaynakları</h4>
+                            <p class="text-gray-600 text-sm">Yeşil yapraklı sebzeler, badem - Kas gevşemesini sağlar</p>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">🫐 Antioksidan Zengini Meyveler</h4>
+                            <p class="text-gray-600 text-sm">Böğürtlen, çilek - Oksidatif stresi azaltır</p>
+                        </div>
+                    </div>
+                `,
+                fullArticleUrl: "#"
+            },
+            4: {
+                title: "Kilo Verme Sürecinde Yapılan Hatalar",
+                category: "Kilo Yönetimi",
+                date: "25 Mayıs 2025",
+                readTime: "8 dk okuma",
+                image: "https://readdy.ai/api/search-image?query=Healthy%20weight%20loss%20concept%20with%20measuring%20tape%2C%20fresh%20vegetables%20and%20fruits%2C%20fitness%20equipment%2C%20clean%20and%20motivational%20setup&width=600&height=300&seq=blog5&orientation=landscape",
+                excerpt: "Kilo verme sürecinde sıkça yapılan hatalar ve bunlardan nasıl kaçınabiliriz. Sağlıklı kilo verme ipuçları.",
+                content: `
+                    <p class="text-gray-600 mb-6 leading-relaxed">Kilo verme yolculuğunda birçok kişi benzer hatalar yapar. Bu hataları bilmek ve kaçınmak, başarılı ve kalıcı sonuçlar elde etmenin anahtarıdır.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">En Sık Yapılan Hatalar</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Aşırı Kısıtlayıcı Diyetler</h4>
+                            <p class="text-red-700 text-sm">Çok düşük kalori alımı metabolizmayı yavaşlatır ve kas kaybına neden olur.</p>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Öğün Atlamak</h4>
+                            <p class="text-red-700 text-sm">Öğün atlamak kan şekerini düşürür ve aşırı yemeye yol açar.</p>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                            <h4 class="font-semibold text-red-800 mb-2">❌ Sadece Teraziye Odaklanmak</h4>
+                            <p class="text-red-700 text-sm">Kilo dalgalanmaları normal olup, vücut kompozisyonu daha önemlidir.</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Doğru Yaklaşım</h3>
+                    <div class="bg-green-50 p-4 rounded-lg mb-6">
+                        <ul class="text-green-700 space-y-2">
+                            <li>✅ Dengeli ve sürdürülebilir beslenme planı</li>
+                            <li>✅ Düzenli fiziksel aktivite</li>
+                            <li>✅ Yeterli su tüketimi</li>
+                            <li>✅ Kaliteli uyku</li>
+                            <li>✅ Stres yönetimi</li>
+                        </ul>
+                    </div>
+                `,
+                fullArticleUrl: "#"
+            },
+            5: {
+                title: "Çocuklarda Sağlıklı Beslenme Alışkanlıkları",
+                category: "Çocuk Beslenmesi",
+                date: "20 Mayıs 2025",
+                readTime: "6 dk okuma",
+                image: "https://readdy.ai/api/search-image?query=Happy%20children%20eating%20healthy%20colorful%20meal%2C%20family%20nutrition%20concept%2C%20bright%20kitchen%20setting%2C%20vegetables%20and%20fruits%20on%20table&width=600&height=300&seq=blog6&orientation=landscape",
+                excerpt: "Çocuklara sağlıklı beslenme alışkanlıkları kazandırmanın yolları. Yaş gruplarına göre beslenme önerileri.",
+                content: `
+                    <p class="text-gray-600 mb-6 leading-relaxed">Çocukluk döneminde kazanılan beslenme alışkanlıkları, yaşam boyu sürecek sağlık durumunun temelini oluşturur. Doğru yaklaşımlarla çocuklarımıza sağlıklı beslenme sevgisi aşılayabiliriz.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Yaş Gruplarına Göre Beslenme</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">👶 0-2 Yaş</h4>
+                            <p class="text-blue-700 text-sm">Anne sütü ve ek gıdaya geçiş dönemi. Çeşitli tatları tanıtma zamanı.</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">🧒 2-6 Yaş</h4>
+                            <p class="text-green-700 text-sm">Beslenme alışkanlıklarının şekillendiği kritik dönem. Örnek olma önemli.</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-800 mb-2">👦 6-12 Yaş</h4>
+                            <p class="text-purple-700 text-sm">Okul çağı. Beslenme eğitimi ve bilinçli tercihler dönemi.</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Pratik Öneriler</h3>
+                    <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                        <li>Çocuğunuzla birlikte alışveriş yapın ve yemek hazırlayın</li>
+                        <li>Renkli ve çeşitli yiyecekler sunun</li>
+                        <li>Yemek zamanlarını keyifli hale getirin</li>
+                        <li>Zorlamak yerine sabırlı olun</li>
+                        <li>Sağlıklı atıştırmalıklar hazır bulundurun</li>
+                    </ul>
+                `,
+                fullArticleUrl: "#"
+            },
+            6: {
+                title: "Hamilelik Döneminde Beslenme Rehberi",
+                category: "Hamilelik Beslenmesi",
+                date: "15 Mayıs 2025",
+                readTime: "9 dk okuma",
+                image: "https://readdy.ai/api/search-image?query=Pregnant%20woman%20eating%20healthy%20meal%2C%20pregnancy%20nutrition%20concept%2C%20fresh%20vegetables%20and%20fruits%2C%20bright%20and%20caring%20atmosphere&width=600&height=300&seq=blog7&orientation=landscape",
+                excerpt: "Hamilelik sürecinde anne ve bebeğin sağlığı için önemli beslenme önerileri ve dikkat edilmesi gerekenler.",
+                content: `
+                    <p class="text-gray-600 mb-6 leading-relaxed">Hamilelik döneminde beslenme, hem anne hem de bebeğin sağlığı için kritik öneme sahiptir. Doğru beslenme alışkanlıkları, sağlıklı bir gebelik süreci ve bebek gelişimi için temel oluşturur.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Hamilelikte Önemli Besinler</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">🍊 Folik Asit</h4>
+                            <p class="text-gray-600 text-sm">Yeşil yapraklı sebzeler, baklagiller - Sinir tüpü defektlerini önler</p>
+                        </div>
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">🥩 Demir</h4>
+                            <p class="text-gray-600 text-sm">Kırmızı et, tavuk, balık - Anemi riskini azaltır</p>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">🥛 Kalsiyum</h4>
+                            <p class="text-gray-600 text-sm">Süt ürünleri, yeşil yapraklılar - Kemik gelişimi için kritik</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Kaçınılması Gerekenler</h3>
+                    <div class="bg-red-50 p-4 rounded-lg mb-6">
+                        <ul class="text-red-700 space-y-2">
+                            <li>❌ Çiğ et ve balık</li>
+                            <li>❌ Alkol ve sigara</li>
+                            <li>❌ Aşırı kafein</li>
+                            <li>❌ İşlenmiş gıdalar</li>
+                            <li>❌ Yüksek cıva içerikli balıklar</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-pink-50 p-4 rounded-lg mb-6">
+                        <h4 class="font-semibold text-pink-800 mb-2">💝 Özel Tavsiye</h4>
+                        <p class="text-pink-700 text-sm">Hamilelik döneminde beslenme planınızı mutlaka doktorunuz ve diyetisyeninizle birlikte oluşturun.</p>
+                    </div>
+                `,
+                fullArticleUrl: "#"
+            }
+        };
+        
+        // Blog kartlarına click event ekle
+        blogCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const blogId = this.getAttribute('data-blog-id');
+                const blog = blogData[blogId];
+                
+                if (blog) {
+                    modalTitle.textContent = blog.title;
+                    modalContent.innerHTML = `
+                        <div class="mb-6">
+                            <img src="${blog.image}" alt="${blog.title}" class="w-full h-64 object-cover rounded-lg mb-4">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-4">
+                                    <span class="category-tag">${blog.category}</span>
+                                    <div class="flex items-center text-gray-500 text-sm">
+                                        <i class="ri-calendar-line mr-2"></i>
+                                        <span>${blog.date}</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-500 text-sm">
+                                        <i class="ri-time-line mr-2"></i>
+                                        <span>${blog.readTime}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">${blog.excerpt}</p>
+                        </div>
+                        
+                        <div class="prose max-w-none">
+                            ${blog.content}
+                        </div>
+                        
+                        <div class="mt-8 pt-6 border-t border-gray-200 flex justify-between items-center">
+                            <div class="text-sm text-gray-500">
+                                Bu yazıyı beğendiyseniz sosyal medyada paylaşabilirsiniz.
+                            </div>
+                            <a href="${blog.fullArticleUrl}" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors inline-flex items-center">
+                                <i class="ri-article-line mr-2"></i>
+                                Tam Makaleyi Oku
+                            </a>
+                        </div>
+                    `;
+                    
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Modal kapatma
+        closeModal.addEventListener('click', function() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Modal dışına tıklayınca kapatma
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // ESC tuşu ile kapatma
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+    </script>
+</body>
+</html>

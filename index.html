@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyt. Ela Ayfer Kaya - Sağlıklı Yaşam İçin Doğru Adres</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#4CAF50',secondary:'#E8F5E9'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .counter-value {
+            transition: all 0.5s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=Professional%20nutritionist%20office%20with%20clean%20modern%20design%2C%20light%20green%20gradient%20background%20on%20the%20left%20side%20fading%20to%20white%20on%20the%20right%2C%20plants%2C%20healthy%20food%20elements%2C%20bright%20and%20airy%20atmosphere%2C%20perfect%20for%20text%20overlay%20on%20the%20left%20side&width=1920&height=1080&seq=hero1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        .statistics-section {
+            background-image: url('https://readdy.ai/api/search-image?query=Abstract%20light%20green%20gradient%20background%20with%20subtle%20organic%20patterns%2C%20very%20light%20and%20minimal%20design%2C%20perfect%20for%20displaying%20statistics%20and%20numbers%2C%20professional%20and%20clean%20look%2C%20medical%20and%20health%20theme&width=1920&height=600&seq=stats1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        .custom-checkbox:checked + label:before {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+        .category-tag {
+            background: #4CAF50;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="text-2xl font-['Pacifico'] text-primary">Dyt. Ela Ayfer Kaya</a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-800 hover:text-primary font-medium transition-colors">Anasayfa</a>
+                <a href="#about" class="text-gray-800 hover:text-primary font-medium transition-colors">Hakkımda</a>
+                <a href="#services" class="text-gray-800 hover:text-primary font-medium transition-colors">Hizmetler</a>
+                <a href="blog.html" class="text-gray-800 hover:text-primary font-medium transition-colors">Blog</a>
+                <a href="#contact" class="text-gray-800 hover:text-primary font-medium transition-colors">İletişim</a>
+            </nav>
+            
+            <!-- Social Media Icons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://www.instagram.com/elaayferk7?igsh=cmpsa3pqcTBieHNz" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary transition-colors">
+                    <i class="ri-instagram-line ri-lg"></i>
+                </a>
+                <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary transition-colors">
+                    <i class="ri-facebook-line ri-lg"></i>
+                </a>
+                <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary transition-colors">
+                    <i class="ri-twitter-x-line ri-lg"></i>
+                </a>
+                <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary transition-colors">
+                    <i class="ri-whatsapp-line ri-lg"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+                <i class="ri-menu-line ri-2x"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-md" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#home" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Anasayfa</a>
+                <a href="#about" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Hakkımda</a>
+                <a href="#services" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Hizmetler</a>
+                <a href="blog.html" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Blog</a>
+                <a href="#contact" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">İletişim</a>
+                
+                <div class="flex items-center space-x-4 py-2">
+                    <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary transition-colors">
+                        <i class="ri-instagram-line ri-lg"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary transition-colors">
+                        <i class="ri-facebook-line ri-lg"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary transition-colors">
+                        <i class="ri-twitter-x-line ri-lg"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary transition-colors">
+                        <i class="ri-whatsapp-line ri-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4 w-full">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Sağlıklı Yaşam İçin Doğru Adres</h1>
+                    <p class="text-lg text-dark mb-8 max-w-lg">Beslenme alışkanlıklarınızı değiştirerek daha sağlıklı ve enerjik bir yaşama adım atın. Kişiye özel beslenme programları ile hedeflerinize ulaşmanıza yardımcı oluyorum.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
+                            <i class="ri-calendar-line mr-2"></i> Randevu Al
+                        </a>
+                        <a href="#services" class="border-2 border-primary text-primary px-6 py-3 rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap flex items-center justify-center">
+                            <i class="ri-information-line mr-2"></i> Hizmetleri Keşfet
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="Ekran görüntüsü 2025-06-18 213505.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Hizmetlerimiz</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Sağlıklı bir yaşam için ihtiyacınız olan tüm beslenme danışmanlığı hizmetlerini sunuyorum. Size özel programlar ile hedeflerinize ulaşmanızı sağlıyorum.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-8 transition-all duration-300 cursor-pointer" data-service-id="1">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mb-6">
+                        <i class="ri-scales-3-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Kilo Yönetimi</h3>
+                    <p class="text-gray-600 mb-6">Sağlıklı ve kalıcı kilo verme veya alma programları ile ideal kilonuza ulaşmanıza yardımcı oluyorum.</p>
+                    <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                        Detaylı Bilgi <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-8 transition-all duration-300 cursor-pointer" data-service-id="2">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mb-6">
+                        <i class="ri-heart-pulse-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Hastalıklarda Beslenme</h3>
+                    <p class="text-gray-600 mb-6">Diyabet, hipertansiyon, kalp hastalıkları gibi kronik rahatsızlıklarda beslenme programları hazırlıyorum.</p>
+                    <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                        Detaylı Bilgi <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-8 transition-all duration-300 cursor-pointer" data-service-id="3">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mb-6">
+                        <i class="ri-run-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Sporcu Beslenmesi</h3>
+                    <p class="text-gray-600 mb-6">Performansınızı artırmak için spor dalınıza ve hedeflerinize uygun beslenme programları hazırlıyorum.</p>
+                    <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                        Detaylı Bilgi <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-8 transition-all duration-300 cursor-pointer" data-service-id="4">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mb-6">
+                        <i class="ri-women-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Hamilelik ve Emzirme Dönemi</h3>
+                    <p class="text-gray-600 mb-6">Hamilelik süreci ve emzirme döneminde anne ve bebeğin sağlığı için özel beslenme danışmanlığı.</p>
+                    <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                        Detaylı Bilgi <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-8 transition-all duration-300 cursor-pointer" data-service-id="5">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mb-6">
+                        <i class="ri-baby-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Çocuk ve Ergen Beslenmesi</h3>
+                    <p class="text-gray-600 mb-6">Büyüme dönemindeki çocuklar için yaşa uygun, sağlıklı beslenme alışkanlıkları kazandıran programlar.</p>
+                    <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                        Detaylı Bilgi <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                
+<!-- Service 6 -->
+<div class="service-card bg-gray-400 rounded-lg shadow-md p-8 transition-all duration-300 cursor-pointer" data-service-id="6">
+
+    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mb-6">
+        <i class="ri-restaurant-line ri-2x text-white"></i> <!-- Logo beyaz yapıldı -->
+    </div>
+    <h3 class="text-xl font-semibold text-white mb-3">Online Beslenme Danışmanlığı</h3> <!-- Başlık beyaz yapıldı -->
+    <p class="text-white mb-6">Uzaktan beslenme danışmanlığı hizmeti alabilir, düzenli takip ve destek ile hedeflerinize ulaşabilirsiniz.</p> <!-- Açıklama metni beyaz yapıldı -->
+    <a href="#" class="text-white font-medium flex items-center hover:underline"> <!-- Bağlantı beyaz yapıldı -->
+        Detaylı Bilgi <i class="ri-arrow-right-line ml-2"></i>
+    </a>
+</div>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="Ekran görüntüsü 2025-06-18 213505.png">
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Hakkımda</h2>
+                    <p class="text-gray-600 mb-6">Merhaba, ben Diyetisyen Ela Ayfer Kaya. 10 yılı aşkın süredir beslenme ve diyet alanında danışmanlık hizmeti veriyorum. İstanbul Üniversitesi Beslenme ve Diyetetik Bölümü'nden mezun olduktan sonra, alanımda kendimi sürekli geliştirmek için çeşitli eğitim ve sertifika programlarına katıldım.</p>
+                    
+                    <p class="text-gray-600 mb-6">Amacım, danışanlarımın sağlıklı beslenme alışkanlıkları kazanmalarını sağlamak ve bu alışkanlıkları yaşam boyu sürdürebilmeleri için onlara rehberlik etmek. Her danışanımın benzersiz olduğuna inanıyor ve kişiye özel beslenme programları hazırlıyorum.</p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Eğitim</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                                <span>İstanbul Üniversitesi, Beslenme ve Diyetetik Bölümü (Lisans)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                                <span>Hacettepe Üniversitesi, Klinik Beslenme (Yüksek Lisans)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Uzmanlık Alanları</h3>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center">
+                                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                                <span>Kilo Yönetimi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                                <span>Sporcu Beslenmesi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                                <span>Hastalıklarda Beslenme</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                                <span>Çocuk Beslenmesi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                                <span>Hamilelik Beslenmesi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                                <span>Fonksiyonel Beslenme</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap inline-flex items-center">
+                        <i class="ri-chat-1-line mr-2"></i> Benimle İletişime Geçin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics-section py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Başarı İstatistiklerimiz</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Yıllar içinde binlerce danışanımızla elde ettiğimiz başarılar ve deneyimlerimiz.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat 1 -->
+                <div class="bg-white rounded-lg shadow-md p-8 text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mx-auto mb-6">
+                        <i class="ri-user-smile-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-2 counter-value" data-target="2500">0</h3>
+                    <p class="text-gray-600">Mutlu Danışan</p>
+                </div>
+                
+                <!-- Stat 2 -->
+                <div class="bg-white rounded-lg shadow-md p-8 text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mx-auto mb-6">
+                        <i class="ri-scales-3-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-2 counter-value" data-target="15000">0</h3>
+                    <p class="text-gray-600">Verilen Toplam Kilo (kg)</p>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="bg-white rounded-lg shadow-md p-8 text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mx-auto mb-6">
+                        <i class="ri-calendar-check-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-2 counter-value" data-target="10">0</h3>
+                    <p class="text-gray-600">Yıllık Deneyim</p>
+                </div>
+                
+                <!-- Stat 4 -->
+                <div class="bg-white rounded-lg shadow-md p-8 text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mx-auto mb-6">
+                        <i class="ri-award-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-2 counter-value" data-target="25">0</h3>
+                    <p class="text-gray-600">Sertifika ve Ödül</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Section -->
+    <section id="blog" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Blog Yazılarım</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Beslenme, sağlık ve yaşam tarzı hakkında bilgilendirici yazılar ve ipuçları.</p>
+            </div>
+            
+            <div class="relative">
+                <div class="blog-slider flex flex-nowrap overflow-x-auto gap-6 pb-4 hide-scrollbar">
+                    <!-- Blog 1 -->
+                    <div class="blog-card bg-white rounded-lg shadow-md min-w-[300px] max-w-[350px] transition-all duration-300">
+                        <img src="https://readdy.ai/api/search-image?query=Healthy%20breakfast%20with%20oatmeal%2C%20fruits%2C%20nuts%20and%20honey%20on%20a%20wooden%20table%2C%20bright%20morning%20light%2C%20fresh%20and%20appetizing%2C%20high%20quality%20food%20photography&width=400&height=250&seq=blog1&orientation=landscape" alt="Sağlıklı Kahvaltı" class="w-full h-48 object-cover rounded-t-lg object-top">
+                        <div class="p-6">
+                            <div class="flex items-center text-gray-500 text-sm mb-2">
+                                <i class="ri-calendar-line mr-2"></i>
+                                <span>18 Haziran 2025</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Güne Sağlıklı Başlamanın 5 Yolu</h3>
+                            <p class="text-gray-600 mb-4">Güne enerjik ve sağlıklı başlamak için kahvaltıda tüketebileceğiniz besinler ve pratik tarifler.</p>
+                            <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                                Devamını Oku <i class="ri-arrow-right-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog 2 -->
+                    <div class="blog-card bg-white rounded-lg shadow-md min-w-[300px] max-w-[350px] transition-all duration-300">
+                        <img src="https://readdy.ai/api/search-image?query=Person%20drinking%20water%20from%20glass%20bottle%20after%20exercise%2C%20hydration%20concept%2C%20bright%20and%20clean%20image%2C%20healthy%20lifestyle%20photography&width=400&height=250&seq=blog2&orientation=landscape" alt="Su İçmenin Önemi" class="w-full h-48 object-cover rounded-t-lg object-top">
+                        <div class="p-6">
+                            <div class="flex items-center text-gray-500 text-sm mb-2">
+                                <i class="ri-calendar-line mr-2"></i>
+                                <span>10 Haziran 2025</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Su İçmenin Sağlığımıza Etkileri</h3>
+                            <p class="text-gray-600 mb-4">Yeterli su tüketiminin metabolizma, cilt sağlığı ve genel sağlık üzerindeki olumlu etkileri.</p>
+                            <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                                Devamını Oku <i class="ri-arrow-right-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog 3 -->
+                    <div class="blog-card bg-white rounded-lg shadow-md min-w-[300px] max-w-[350px] transition-all duration-300">
+                        <img src="https://readdy.ai/api/search-image?query=Various%20colorful%20vegetables%20and%20fruits%20arranged%20on%20white%20surface%2C%20rainbow%20of%20healthy%20foods%2C%20nutrition%20concept%2C%20bright%20and%20vibrant%20colors%2C%20professional%20food%20photography&width=400&height=250&seq=blog3&orientation=landscape" alt="Mevsiminde Beslenme" class="w-full h-48 object-cover rounded-t-lg object-top">
+                        <div class="p-6">
+                            <div class="flex items-center text-gray-500 text-sm mb-2">
+                                <i class="ri-calendar-line mr-2"></i>
+                                <span>5 Haziran 2025</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Mevsiminde Beslenmenin Önemi</h3>
+                            <p class="text-gray-600 mb-4">Mevsiminde tüketilen sebze ve meyvelerin besin değerleri ve sağlığımıza katkıları.</p>
+                            <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                                Devamını Oku <i class="ri-arrow-right-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog 4 -->
+                    <div class="blog-card bg-white rounded-lg shadow-md min-w-[300px] max-w-[350px] transition-all duration-300">
+                        <img src="https://readdy.ai/api/search-image?query=Person%20doing%20yoga%20or%20stretching%20exercise%20in%20bright%20room%2C%20wellness%20and%20mindfulness%20concept%2C%20healthy%20lifestyle%20photography&width=400&height=250&seq=blog4&orientation=landscape" alt="Stres Yönetimi" class="w-full h-48 object-cover rounded-t-lg object-top">
+                        <div class="p-6">
+                            <div class="flex items-center text-gray-500 text-sm mb-2">
+                                <i class="ri-calendar-line mr-2"></i>
+                                <span>1 Haziran 2025</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Stres ve Beslenme İlişkisi</h3>
+                            <p class="text-gray-600 mb-4">Stresin beslenme alışkanlıklarımız üzerindeki etkileri ve stresle başa çıkmada yardımcı besinler.</p>
+                            <a href="#" class="text-primary font-medium flex items-center hover:underline">
+                                Devamını Oku <i class="ri-arrow-right-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <button class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-700 hover:text-primary z-10 blog-prev hidden md:flex">
+                    <i class="ri-arrow-left-s-line ri-lg"></i>
+                </button>
+                <button class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-700 hover:text-primary z-10 blog-next hidden md:flex">
+                    <i class="ri-arrow-right-s-line ri-lg"></i>
+                </button>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="blog.html" class="inline-block border-2 border-primary text-primary px-6 py-3 rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+                    Tüm Yazıları Görüntüle
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">İletişim</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Sorularınız için bana ulaşabilir veya randevu almak için form doldurabilirsiniz.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Bize Yazın</h3>
+                    <form id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2">İsim Soyisim</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="İsim Soyisim">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2">E-posta</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="E-posta adresiniz">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 mb-2">Telefon</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Telefon numaranız">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 mb-2">Konu</label>
+                            <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary pr-8 appearance-none bg-white">
+                                <option value="" selected disabled>Konu seçiniz</option>
+                                <option value="appointment">Randevu Talebi</option>
+                                <option value="information">Bilgi Alma</option>
+                                <option value="other">Diğer</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2">Mesajınız</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Mesajınızı yazın"></textarea>
+                        </div>
+                        
+                        <div class="mb-6 flex items-start">
+                            <input type="checkbox" id="consent" class="custom-checkbox hidden">
+                            <label for="consent" class="flex items-start cursor-pointer">
+                                <span class="w-5 h-5 border border-gray-300 rounded flex-shrink-0 mr-2 mt-0.5 relative">
+                                    <span class="absolute inset-0 bg-primary opacity-0 rounded transition-opacity"></span>
+                                </span>
+                                <span class="text-gray-600 text-sm">Kişisel verilerimin işlenmesine izin veriyorum ve <a href="#" class="text-primary hover:underline">Gizlilik Politikası</a>'nı okudum ve kabul ediyorum.</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap w-full">
+                            Gönder
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">İletişim Bilgileri</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mr-4 flex-shrink-0">
+                                    <i class="ri-map-pin-line"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Adres</h4>
+                                    <p class="text-gray-600">Bağdat Caddesi No:123, Kadıköy, İstanbul</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mr-4 flex-shrink-0">
+                                    <i class="ri-phone-line"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Telefon</h4>
+                                    <p class="text-gray-600">+90 (212) 123 45 67</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mr-4 flex-shrink-0">
+                                    <i class="ri-mail-line"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">E-posta</h4>
+                                    <p class="text-gray-600">info@elaayfer.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full mr-4 flex-shrink-0">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Çalışma Saatleri</h4>
+                                    <p class="text-gray-600">Pazartesi - Cuma: 09:00 - 18:00</p>
+                                    <p class="text-gray-600">Cumartesi: 09:00 - 14:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex space-x-4">
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+                                <i class="ri-facebook-line"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+                                <i class="ri-twitter-x-line"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+                                <i class="ri-whatsapp-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden h-[300px]">
+                        <img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="Konum" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Modal -->
+    <div id="services-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-200 p-4 flex justify-between items-center">
+                <h2 id="service-modal-title" class="text-2xl font-bold text-gray-800"></h2>
+                <button id="close-service-modal" class="text-gray-500 hover:text-gray-700 text-2xl">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            
+            <div class="p-6">
+                <div id="service-modal-content">
+                    <!-- Content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-['Pacifico'] mb-6">Dyt. Ela Ayfer Kaya</h3>
+                    <p class="text-gray-400 mb-6">Sağlıklı bir yaşam için doğru beslenme alışkanlıkları kazanmanıza yardımcı oluyorum. Kişiye özel beslenme programları ile hedeflerinize ulaşmanızı sağlıyorum.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-facebook-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-whatsapp-line"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Hızlı Erişim</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Anasayfa</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">Hakkımda</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Hizmetler</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">İletişim</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Gizlilik Politikası</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">İletişim</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mr-3 mt-1"></i>
+                            <span>Bağdat Caddesi No:123, Kadıköy, İstanbul</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mr-3 mt-1"></i>
+                            <span>+90 (212) 123 45 67</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mr-3 mt-1"></i>
+                            <span>info@elaayfer.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-time-line mr-3 mt-1"></i>
+                            <span>Pazartesi - Cuma: 09:00 - 18:00<br>Cumartesi: 09:00 - 14:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Dyt. Ela Ayfer Kaya. Tüm hakları saklıdır.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center">
+                        <i class="ri-visa-line ri-lg mr-1"></i> Visa
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center">
+                        <i class="ri-mastercard-line ri-lg mr-1"></i> Mastercard
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center">
+                        <i class="ri-paypal-line ri-lg mr-1"></i> PayPal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 z-50">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+
+    <!-- Mobile Menu Script -->
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+                } else {
+                    mobileMenuButton.innerHTML = '<i class="ri-close-line ri-2x"></i>';
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+                });
+            });
+        });
+    </script>
+
+    <!-- Smooth Scroll Script -->
+    <script id="smooth-scroll-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            for (const link of links) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Counter Animation Script -->
+    <script id="counter-animation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.counter-value');
+            const speed = 200;
+            
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const count = parseInt(counter.innerText);
+                    const increment = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(animateCounters, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                });
+            };
+            
+            // Check if element is in viewport
+            const isInViewport = el => {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            };
+            
+            // Start animation when statistics section is in viewport
+            let animated = false;
+            window.addEventListener('scroll', () => {
+                if (!animated && isInViewport(document.querySelector('.statistics-section'))) {
+                    animateCounters();
+                    animated = true;
+                }
+            });
+            
+            // Check on load as well
+            if (isInViewport(document.querySelector('.statistics-section'))) {
+                animateCounters();
+                animated = true;
+            }
+        });
+    </script>
+
+    <!-- Blog Slider Script -->
+    <script id="blog-slider-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.blog-slider');
+            const prevButton = document.querySelector('.blog-prev');
+            const nextButton = document.querySelector('.blog-next');
+            const cards = document.querySelectorAll('.blog-card');
+            
+            if (cards.length > 0) {
+                const cardWidth = cards[0].offsetWidth + 24; // card width + gap
+                
+                nextButton.addEventListener('click', () => {
+                    slider.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+                });
+                
+                prevButton.addEventListener('click', () => {
+                    slider.scrollBy({ left: -cardWidth * 2, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+
+    <!-- Back to Top Script -->
+    <script id="back-to-top-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <!-- Form Validation Script -->
+    <script id="form-validation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const consentCheckbox = document.getElementById('consent');
+            const checkboxLabel = consentCheckbox.nextElementSibling.querySelector('span:first-child');
+            
+            // Custom checkbox styling
+            consentCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    checkboxLabel.querySelector('span').classList.remove('opacity-0');
+                    checkboxLabel.querySelector('span').classList.add('opacity-100');
+                } else {
+                    checkboxLabel.querySelector('span').classList.remove('opacity-100');
+                    checkboxLabel.querySelector('span').classList.add('opacity-0');
+                }
+            });
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                let isValid = true;
+                
+                // Simple validation
+                if (!name) {
+                    isValid = false;
+                    document.getElementById('name').classList.add('border-red-500');
+                } else {
+                    document.getElementById('name').classList.remove('border-red-500');
+                }
+                
+                if (!email || !email.includes('@')) {
+                    isValid = false;
+                    document.getElementById('email').classList.add('border-red-500');
+                } else {
+                    document.getElementById('email').classList.remove('border-red-500');
+                }
+                
+                if (!phone) {
+                    isValid = false;
+                    document.getElementById('phone').classList.add('border-red-500');
+                } else {
+                    document.getElementById('phone').classList.remove('border-red-500');
+                }
+                
+                if (!subject) {
+                    isValid = false;
+                    document.getElementById('subject').classList.add('border-red-500');
+                } else {
+                    document.getElementById('subject').classList.remove('border-red-500');
+                }
+                
+                if (!message) {
+                    isValid = false;
+                    document.getElementById('message').classList.add('border-red-500');
+                } else {
+                    document.getElementById('message').classList.remove('border-red-500');
+                }
+                
+                if (!consentCheckbox.checked) {
+                    isValid = false;
+                    checkboxLabel.querySelector('span:first-child').classList.add('border-red-500');
+                } else {
+                    checkboxLabel.querySelector('span:first-child').classList.remove('border-red-500');
+                }
+                
+                if (isValid) {
+                    // Here you would normally send the form data to a server
+                    alert('Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.');
+                    contactForm.reset();
+                    checkboxLabel.querySelector('span').classList.remove('opacity-100');
+                    checkboxLabel.querySelector('span').classList.add('opacity-0');
+                } else {
+                    alert('Lütfen tüm alanları doldurun ve gizlilik politikasını kabul edin.');
+                }
+            });
+        });
+    </script>
+
+    <!-- Services Modal Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const serviceCards = document.querySelectorAll('.service-card');
+        const modal = document.getElementById('services-modal');
+        const modalTitle = document.getElementById('service-modal-title');
+        const modalContent = document.getElementById('service-modal-content');
+        const closeModal = document.getElementById('close-service-modal');
+        
+        // Services data
+        const servicesData = {
+            1: {
+                title: "Kilo Yönetimi",
+                category: "Kilo Kontrolü",
+                image: "https://readdy.ai/api/search-image?query=Professional%20nutritionist%20consultation%20for%20weight%20management%2C%20healthy%20meal%20planning%2C%20measuring%20tape%2C%20fresh%20vegetables%20and%20fruits%2C%20clean%20office%20setting&width=600&height=300&seq=service1&orientation=landscape",
+                excerpt: "Sağlıklı ve kalıcı kilo verme veya alma programları ile ideal kilonuza ulaşmanıza yardımcı oluyorum.",
+                content: `
+                    <p class="text-gray-600 mb-6 leading-relaxed">Kilo yönetimi, sadece kilo vermek değil, sağlıklı bir vücut kompozisyonuna ulaşmak ve bunu sürdürmektir. Kişiye özel yaklaşımımla, yaşam tarzınıza uygun ve sürdürülebilir çözümler sunuyorum.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Hizmet Kapsamı</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                            <h4 class="font-semibold text-green-800 mb-2">📊 Detaylı Analiz</h4>
+                            <ul class="text-green-700 text-sm space-y-1">
+                                <li>• Vücut kompozisyon analizi</li>
+                                <li>• Metabolizma hızı hesaplama</li>
+                                <li>• Beslenme alışkanlıkları değerlendirmesi</li>
+                                <li>• Hedef belirleme</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-blue-800 mb-2">🍽️ Kişisel Program</h4>
+                            <ul class="text-blue-700 text-sm space-y-1">
+                                <li>• Size özel beslenme planı</li>
+                                <li>• Porsiyon kontrolü eğitimi</li>
+                                <li>• Alternatif menü seçenekleri</li>
+                                <li>• Pratik tarifler</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Süreç Nasıl İşliyor?</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">İlk Değerlendirme</h4>
+                                <p class="text-gray-600 text-sm">Detaylı anamnez, vücut analizi ve hedef belirleme</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Program Hazırlama</h4>
+                                <p class="text-gray-600 text-sm">Kişiye özel beslenme programı ve eğitim materyalleri</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Takip ve Destek</h4>
+                                <p class="text-gray-600 text-sm">Haftalık kontroller ve program güncellemeleri</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                serviceUrl: "#"
+            },
+            2: {
+                title: "Hastalıklarda Beslenme",
+                category: "Tıbbi Beslenme",
+                image: "https://readdy.ai/api/search-image?query=Medical%20nutrition%20therapy%20consultation%2C%20doctor%20and%20nutritionist%20discussing%20healthy%20meal%20plan%20for%20chronic%20diseases%2C%20medical%20charts%2C%20healthy%20foods&width=600&height=300&seq=service2&orientation=landscape",
+                excerpt: "Diyabet, hipertansiyon, kalp hastalıkları gibi kronik rahatsızlıklarda beslenme programları hazırlıyorum.",
+                content: `
+                    <p class="text-gray-600 mb-6 leading-relaxed">Kronik hastalıklarda doğru beslenme, tedavinin ayrılmaz bir parçasıdır. Tıbbi beslenme tedavisi ile hastalığınızın seyrini olumlu etkileyebilir, yaşam kalitenizi artırabilirsiniz.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Uzmanlık Alanlarım</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-800 mb-2">🩺 Metabolik Hastalıklar</h4>
+                            <ul class="text-red-700 text-sm space-y-1">
+                                <li>• Tip 1 ve Tip 2 Diyabet</li>
+                                <li>• Metabolik Sendrom</li>
+                                <li>• Tiroid Hastalıkları</li>
+                                <li>• PCOS</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">❤️ Kardiyovasküler</h4>
+                            <ul class="text-blue-700 text-sm space-y-1">
+                                <li>• Hipertansiyon</li>
+                                <li>• Yüksek Kolesterol</li>
+                                <li>• Kalp Hastalıkları</li>
+                                <li>• Damar Hastalıkları</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">🫁 Sindirim Sistemi</h4>
+                            <ul class="text-green-700 text-sm space-y-1">
+                                <li>• İrritabl Bağırsak Sendromu</li>
+                                <li>• Çölyak Hastalığı</li>
+                                <li>• Gastrit ve Ülser</li>
+                                <li>• Karaciğer Hastalıkları</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-800 mb-2">🦴 Diğer Durumlar</h4>
+                            <ul class="text-purple-700 text-sm space-y-1">
+                                <li>• Osteoporoz</li>
+                                <li>• Böbrek Hastalıkları</li>
+                                <li>• Kanser Tedavisi Desteği</li>
+                                <li>• Besin Alerjileri</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+                serviceUrl: "#"
+            },
+            3: {
+                title: "Sporcu Beslenmesi",
+                category: "Performans Beslenmesi",
+                image: "https://readdy.ai/api/search-image?query=Sports%20nutrition%20consultation%2C%20athlete%20meal%20planning%2C%20protein%20supplements%2C%20fitness%20nutrition%2C%20performance%20enhancement%20foods&width=600&height=300&seq=service3&orientation=landscape",
+                excerpt: "Performansınızı artırmak için spor dalınıza ve hedeflerinize uygun beslenme programları hazırlıyorum.",
+                content: `
+                    <p class="text-gray-600 mb-6 leading-relaxed">Sporcu beslenmesi, performansı optimize etmek, toparlanmayı hızlandırmak ve yaralanma riskini azaltmak için kritik öneme sahiptir. Spor dalınıza ve hedeflerinize özel beslenme stratejileri geliştiriyorum.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Spor Dallarına Göre Beslenme</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-800 mb-2">🏃 Dayanıklılık Sporları</h4>
+                            <ul class="text-orange-700 text-sm space-y-1">
+                                <li>• Maraton</li>
+                                <li>• Bisiklet</li>
+                                <li>• Yüzme</li>
+                                <li>• Triatlon</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-800 mb-2">💪 Güç Sporları</h4>
+                            <ul class="text-red-700 text-sm space-y-1">
+                                <li>• Vücut Geliştirme</li>
+                                <li>• Powerlifting</li>
+                                <li>• Halter</li>
+                                <li>• Crossfit</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">⚽ Takım Sporları</h4>
+                            <ul class="text-blue-700 text-sm space-y-1">
+                                <li>• Futbol</li>
+                                <li>• Basketbol</li>
+                                <li>• Voleybol</li>
+                                <li>• Tenis</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+                serviceUrl: "#"
+            },
+            4: {
+                title: "Hamilelik ve Emzirme Dönemi",
+                category: "Anne Sağlığı",
+                image: "https://readdy.ai/api/search-image?query=Pregnancy%20nutrition%20consultation%2C%20pregnant%20woman%20eating%20healthy%20meal%2C%20prenatal%20vitamins%2C%20maternal%20health%20nutrition&width=600&height=300&seq=service4&orientation=landscape",
+                excerpt: "Hamilelik süreci ve emzirme döneminde anne ve bebeğin sağlığı için özel beslenme danışmanlığı.",
+                content: `
+                    <p class="text-gray-600 mb-6 leading-relaxed">Hamilelik ve emzirme döneminde beslenme, hem anne hem de bebeğin sağlığı için kritik öneme sahiptir. Bu özel dönemlerde artan besin ihtiyaçlarınızı karşılamak için kişiselleştirilmiş programlar hazırlıyorum.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Dönemlere Göre Beslenme</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-500">
+                            <h4 class="font-semibold text-pink-800 mb-2">🤱 Hamilelik Öncesi</h4>
+                            <p class="text-pink-700 text-sm">Folik asit, demir ve diğer kritik besinlerle vücudu hamileliğe hazırlama</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                            <h4 class="font-semibold text-purple-800 mb-2">🤰 Hamilelik Dönemi</h4>
+                            <p class="text-purple-700 text-sm">Trimester bazlı beslenme planları ve bebeğin gelişimi için optimal besin alımı</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-blue-800 mb-2">🍼 Emzirme Dönemi</h4>
+                            <p class="text-blue-700 text-sm">Süt kalitesini artıran ve anne sağlığını koruyan beslenme stratejileri</p>
+                        </div>
+                    </div>
+                `,
+                serviceUrl: "#"
+            },
+            5: {
+                title: "Çocuk ve Ergen Beslenmesi",
+                category: "Büyüme Dönemi",
+                image: "https://readdy.ai/api/search-image?query=Child%20nutrition%20consultation%2C%20healthy%20kids%20meal%20planning%2C%20family%20nutrition%2C%20children%20eating%20vegetables%20and%20fruits&width=600&height=300&seq=service5&orientation=landscape",
+                excerpt: "Büyüme dönemindeki çocuklar için yaşa uygun, sağlıklı beslenme alışkanlıkları kazandıran programlar.",
+                content: `
+                    <p class="text-gray-600 mb-6 leading-relaxed">Çocukluk ve ergenlik döneminde kazanılan beslenme alışkanlıkları, yaşam boyu sağlığın temelini oluşturur. Yaş gruplarına özel beslenme programları ile çocuğunuzun sağlıklı büyümesini destekliyorum.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Yaş Gruplarına Göre Beslenme</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-yellow-800 mb-2">👶 0-2 Yaş (Bebek Dönemi)</h4>
+                            <ul class="text-yellow-700 text-sm space-y-1">
+                                <li>• Anne sütü ve ek gıdaya geçiş</li>
+                                <li>• İlk tatlar ve besin çeşitliliği</li>
+                                <li>• Alerjik reaksiyonları önleme</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">🧒 2-6 Yaş (Okul Öncesi)</h4>
+                            <ul class="text-green-700 text-sm space-y-1">
+                                <li>• Beslenme alışkanlıklarının şekillenmesi</li>
+                                <li>• Seçici yeme davranışları</li>
+                                <li>• Aile yemek kültürü oluşturma</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">👦 6-12 Yaş (Okul Çağı)</h4>
+                            <ul class="text-blue-700 text-sm space-y-1">
+                                <li>• Okul beslenme programları</li>
+                                <li>• Akademik performans desteği</li>
+                                <li>• Sağlıklı atıştırmalık seçimleri</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-800 mb-2">👨‍🎓 12-18 Yaş (Ergenlik)</h4>
+                            <ul class="text-purple-700 text-sm space-y-1">
+                                <li>• Hızlı büyüme döneminde besin ihtiyaçları</li>
+                                <li>• Vücut imajı ve sağlıklı kilo yönetimi</li>
+                                <li>• Spor ve akademik başarı desteği</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+                serviceUrl: "#"
+            },
+            6: {
+                title: "Online Beslenme Danışmanlığı",
+                category: "Dijital Hizmet",
+                image: "https://readdy.ai/api/search-image?query=Online%20nutrition%20consultation%2C%20video%20call%20with%20nutritionist%2C%20digital%20meal%20planning%2C%20remote%20health%20consultation&width=600&height=300&seq=service6&orientation=landscape",
+                excerpt: "Uzaktan beslenme danışmanlığı hizmeti alabilir, düzenli takip ve destek ile hedeflerinize ulaşabilirsiniz.",
+                content: `
+                    <p class="text-gray-600 mb-6 leading-relaxed">Teknolojinin gücüyle, coğrafi sınırlar olmadan kaliteli beslenme danışmanlığı hizmeti sunuyorum. Online platformumuz sayesinde evinizin konforunda profesyonel destek alabilirsiniz.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Online Hizmet Avantajları</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">🌍 Erişilebilirlik</h4>
+                            <ul class="text-green-700 text-sm space-y-1">
+                                <li>• Coğrafi sınır yok</li>
+                                <li>• Esnek randevu saatleri</li>
+                                <li>• Evden konforlu danışmanlık</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">📱 Dijital Araçlar</h4>
+                            <ul class="text-blue-700 text-sm space-y-1">
+                                <li>• Mobil uygulama desteği</li>
+                                <li>• Anlık mesajlaşma</li>
+                                <li>• Dijital beslenme günlüğü</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Paket Seçenekleri</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-white border-2 border-gray-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-800 mb-2">📋 Temel Paket</h4>
+                            <p class="text-2xl font-bold text-primary mb-2">₺499</p>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• 1 online konsültasyon</li>
+                                <li>• Kişisel beslenme planı</li>
+                                <li>• 2 hafta WhatsApp desteği</li>
+                            </ul>
+                        </div>
+                        <div class="bg-primary text-white rounded-lg p-4 transform scale-105">
+                            <h4 class="font-semibold mb-2">⭐ Standart Paket</h4>
+                            <p class="text-2xl font-bold mb-2">₺799</p>
+                            <ul class="text-sm space-y-1">
+                                <li>• 3 online konsültasyon</li>
+                                <li>• Detaylı beslenme programı</li>
+                                <li>• 1 ay WhatsApp desteği</li>
+                                <li>• Haftalık kontrol</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border-2 border-gray-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-800 mb-2">👑 Premium Paket</h4>
+                            <p class="text-2xl font-bold text-primary mb-2">₺999</p>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• 6 online konsültasyon</li>
+                                <li>• Kapsamlı program</li>
+                                <li>• 3 ay WhatsApp desteği</li>
+                                <li>• Haftalık kontrol + revizyon</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+                serviceUrl: "#"
+            }
+        };
+        
+        // Service kartlarına click event ekle
+        serviceCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const serviceId = this.getAttribute('data-service-id');
+                const service = servicesData[serviceId];
+                
+                if (service) {
+                    modalTitle.textContent = service.title;
+                    modalContent.innerHTML = `
+                        <div class="mb-6">
+                            <img src="${service.image}" alt="${service.title}" class="w-full h-64 object-cover rounded-lg mb-4">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="category-tag">${service.category}</span>
+                            </div>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">${service.excerpt}</p>
+                        </div>
+                        
+                        <div class="prose max-w-none">
+                            ${service.content}
+                        </div>
+                        
+                        <div class="mt-8 pt-6 border-t border-gray-200 flex justify-between items-center">
+                            <div class="text-sm text-gray-500">
+                                Bu hizmet hakkında daha fazla bilgi almak için iletişime geçebilirsiniz.
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors inline-flex items-center">
+                                    <i class="ri-calendar-line mr-2"></i>
+                                    Randevu Al
+                                </a>
+                                <a href="#contact" class="border-2 border-primary text-primary px-6 py-3 rounded-button font-medium hover:bg-primary hover:text-white transition-colors inline-flex items-center">
+                                    <i class="ri-chat-1-line mr-2"></i>
+                                    İletişime Geç
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Modal kapatma
+        closeModal.addEventListener('click', function() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Modal dışına tıklayınca kapatma
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // ESC tuşu ile kapatma
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+    </script>
+</body>
+</html>
